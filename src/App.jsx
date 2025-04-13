@@ -34,11 +34,11 @@ export default function App() {
       }
       return result;
     }
-    if (!timeJudge(p1TimeMinutes) || !timeJudge(p1TimeSeconds) || !timeJudge(p2TimeMinutes) || !timeJudge(p2TimeSeconds)) {
+    if (!timeJudge(p1TimeMinutes) || !timeJudge(p1TimeSeconds) || !timeJudge(p1Byoyomi) || !timeJudge(p2TimeMinutes) || !timeJudge(p2TimeSeconds) || !timeJudge(p2Byoyomi)) {
       alert("時間を正しく入力してください。");
       return;
     };
-    if (p1TimeMinutes === 0 && p1TimeSeconds === 0 && p1Byoyomi === 0 && p2TimeMinutes === 0 && p2TimeSeconds === 0 && p2Byoyomi === 0) {
+    if ((p1TimeMinutes === 0 && p1TimeSeconds === 0 && p1Byoyomi === 0) || (p2TimeMinutes === 0 && p2TimeSeconds === 0 && p2Byoyomi === 0)) {
       alert("時間を入力してください。");
       return;
     }
