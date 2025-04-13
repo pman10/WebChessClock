@@ -56,6 +56,7 @@ export default function App() {
     return <>
     <div id="settingsWrapper">
       <h1>Web対局時計</h1>
+      <p>ウェブブラウザ上で動くシンプルな対局時計です。音が出ます。</p>
       <div>左側プレイヤー</div>
       <input type="number" id="p1TimeMinutes" placeholder="分"/>
       <input type="number" id="p1TimeSeconds" placeholder="秒"/>
