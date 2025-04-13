@@ -51,6 +51,15 @@ export default function Clock({settings}) {
   }, [wasGameOver]);
 
   useEffect(() => {
+    if (!isP1ByoyomiMode && p1Time === 0) {
+      setIsP1ByoyomiMode(true);
+      setP1Time(p1Byoyomi);
+    }
+    if (!isP2ByoyomiMode && p2Time === 0) {
+      setIsP2ByoyomiMode(true);
+      setP2Time(p2Byoyomi);
+    }
+
     let time = p === "p1" ? p1Time : p2Time;
     if (time === 0) {
       if (p === "p1") { 
@@ -123,15 +132,7 @@ export default function Clock({settings}) {
     clearInterval(timer);
     setTimer(setInterval(() => countDown(turnP), 1000));
   }
-  
-  /*return <>
-  <div id="wasGameOver">{wasGameOver ? "Game Over" : ""}</div>
-  <div id="turnDisplay">{p}</div>
-  <div id="p1TimeDisplay">{isP1ByoyomiMode + "," + p1Time}</div>
-  <div id="p2TimeDisplay">{isP2ByoyomiMode + "," + p2Time}</div>
-  <Button player={"p1"} handleClick={() => setTurn("p1")}>p1</Button>
-  <Button player={"p2"} handleClick={() => setTurn("p2")}>p2</Button>
-  </>*/
+
   return <div id="clockContainer">
   <div id="p1TimeDisplay" onMouseDown={() => {if (!wasGameOver) setTurn("p1")}}
     style={{color:p === "p1" ? "black" : "silver"}}><span className="timeWrapper">{p1TimeForDisplay}</span></div>
