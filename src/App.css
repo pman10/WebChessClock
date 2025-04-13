@@ -1,0 +1,24 @@
+#settingsWrapper {
+    margin: 50px;
+}
+
+
+#clockContainer {
+    display: flex;
+    height:100vh;
+}
+
+#p1TimeDisplay, #p2TimeDisplay {
+    flex:1;
+    display:block;
+    position:relative
+}
+
+.timeWrapper {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    font-family: monospace;
+    font-size: 100px;
+}
