@@ -18,6 +18,8 @@ export default function App() {
     let p1TimeSeconds = parseInt(document.getElementById("p1TimeSeconds").value);
     let p2TimeMinutes = parseInt(document.getElementById("p2TimeMinutes").value);
     let p2TimeSeconds = parseInt(document.getElementById("p2TimeSeconds").value);
+    let p1Byoyomi = parseInt(document.getElementById("p1Byoyomi").value);
+    let p2Byoyomi = parseInt(document.getElementById("p2Byoyomi").value);
     let timeJudge = (time) => {
       let result = true;
       if (typeof time === "number") {
@@ -36,14 +38,14 @@ export default function App() {
       alert("時間を正しく入力してください。");
       return;
     };
-    if (p1TimeMinutes === 0 && p1TimeSeconds === 0 && p2TimeMinutes === 0 && p2TimeSeconds === 0) {
+    if (p1TimeMinutes === 0 && p1TimeSeconds === 0 && p1Byoyomi === 0 && p2TimeMinutes === 0 && p2TimeSeconds === 0 && p2Byoyomi === 0) {
       alert("時間を入力してください。");
       return;
     }
     newSettings.p1Time = p1TimeMinutes * 60 + p1TimeSeconds;
     newSettings.p2Time = p2TimeMinutes * 60 + p2TimeSeconds;
-    newSettings.p1Byoyomi = parseInt(document.getElementById("p1Byoyomi").value);
-    newSettings.p2Byoyomi = parseInt(document.getElementById("p2Byoyomi").value);
+    newSettings.p1Byoyomi = p1Byoyomi;
+    newSettings.p2Byoyomi = p2Byoyomi;
     setSettings(newSettings);
     setDidTimerStart(true);
   }
